@@ -2,11 +2,11 @@ PImage face;
 
 void setup(){
   // 1. On the line below, change "face1.jpg" to be the name of the face you want to use
-  face = loadImage("face1.jpg");
+  face = loadImage("face.jpg");
   
   // 2. Run your program.  Is the face stretched?
   // Fix the numbers below so the face looks good
-  size(200, 600);
+  size(600, 600);
   
   face.resize(width,height);
   background(face);
@@ -20,13 +20,20 @@ void draw() {
   
   // 3. Use circle(x, y, size) to put two BIG eyes on the face
   // Example: circle(100, 50, 80);
+  fill(mouseX, mouseY, mouseX);
+  circle(265, 300, 70);
+  circle(340, 300, 70);
  
   
   // 5. Use mouseX and mouseY to change the color of the irises when the mouse moves
   // hint: mouseX is a int variable, so you can use it anywhere you're using a number
   // hint: you will be changing the fill command you wrote in step 4
   
+  
   // 6. Draw black pupils on top of the eyes.
+  fill(0,0,0);
+  circle(265, 300, 25);
+  circle(340, 300, 25);
 
   
   
