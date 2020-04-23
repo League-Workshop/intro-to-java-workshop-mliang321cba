@@ -32,7 +32,7 @@ public class DragonFight {
 		if(input.equalsIgnoreCase("yell")) {
 			//-- Find a random number between 0 and 10 and store it in dragonDamage
 			Random thing = new Random();
-			int randomNum = thing.nextInt(11);
+			int randomNum = thing.nextInt(21);
 			//-- Subtract that number from the dragon's health variable 
 			dragonHealth = dragonHealth - randomNum;
 		}
@@ -40,31 +40,36 @@ public class DragonFight {
 		if(input.equalsIgnoreCase("kick")) {
 			//-- Find a random number between 0 and 25 and store it in dragonDamage
 			Random thing2 = new Random();
-			int randomNum2 = thing2.nextInt(26);
+			int randomNum2 = thing2.nextInt(36);
 			dragonHealth = dragonHealth - randomNum2;
 			//-- Subtract that number from the dragon's health variable
 		}
 			
 		
 		// 11.  Find a random number between 0 and 35 and store it in playerDamage
-		
+		Random thing3 = new Random();
+		int randomNum3 = thing3.nextInt(26);
+		playerHealth = playerHealth - randomNum3;
 		// 12. Subtract this number from the player's health
 		
 		
 		
 		// 13. If the user's health is less than or equal to 0
-		
+		if(playerHealth<=0) {
 			//-- Tell the user that they lost
-			
-		
+			JOptionPane.showMessageDialog(null, "You lost.");
+		}
 		// 14. Else if the dragon's health is less than or equal to 0
-		
+		if(dragonHealth<=0) {
+			JOptionPane.showMessageDialog(null, "You defeated the dragon and got a ton of gold!");
+		}
 			//-- Tell the user that the dragon is dead and they took a ton of gold!
 			
 	   //  15.  Else
-			
+		else {
 			//-- Pop up a message that tells the their current health and the dragon's currently health (Bonus: Also display the amount of health that was lost for each player this round)
-			
+			JOptionPane.showMessageDialog(null, "Your health is " + playerHealth + ". \n The dragon's health is " + dragonHealth + ".");
+		}
 		}
 	}
 }
